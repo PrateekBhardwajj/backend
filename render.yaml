@@ -3,7 +3,7 @@ services:
     name: portfolio-backend
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn mywebsite.wsgi:application
+    startCommand: PYTHONPATH=website gunicorn mywebsite.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: mywebsite.settings
